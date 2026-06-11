@@ -1,0 +1,13 @@
+{
+  "name": "@app/worker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run --config vitest.config.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@package/workflow-core": "workspace:*"
+  }
+}
