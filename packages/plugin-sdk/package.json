@@ -1,5 +1,21 @@
 {
   "name": "@package/plugin-sdk",
   "private": true,
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./ui": "./src/ui.ts",
+    "./protocol": "./src/protocol.ts",
+    "./executor": "./src/executor.ts"
+  },
+  "scripts": {
+    "test": "vitest run src/index.test.ts"
+  },
+  "dependencies": {
+    "@package/asset-types": "workspace:*",
+    "@package/protocol": "workspace:*",
+    "@package/ui-sdk": "workspace:*",
+    "zod": "^4.4.3"
+  }
 }

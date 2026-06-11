@@ -1,0 +1,28 @@
+import { defineNode, definePlugin } from "@package/plugin-sdk";
+
+export const plugin = definePlugin({
+  manifest: {
+    schemaVersion: "1.0",
+    id: "core.text-input",
+    name: "文本输入",
+    version: "0.1.0",
+    engine: {
+      host: "^1.0.0",
+      sdk: "^1.0.0",
+    },
+    entrypoints: {
+      ui: "http://localhost:4101/index.html",
+    },
+    permissions: [],
+  },
+  nodes: [
+    defineNode({
+      type: "core.text-input/node",
+      title: "文本输入",
+      inputs: [],
+      outputs: [{ id: "text", type: "core/text" }],
+    }),
+  ] as const,
+});
+
+export const manifest = plugin.manifest;

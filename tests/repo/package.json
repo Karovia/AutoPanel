@@ -2,7 +2,10 @@
   "name": "@tests/repo",
   "private": true,
   "version": "0.0.0",
+  "dependencies": {
+    "@package/plugin-sdk": "workspace:*"
+  },
   "scripts": {
-    "test": "vitest run workspace-smoke.test.ts"
+    "test": "vitest run"
   }
 }

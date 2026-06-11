@@ -1,5 +1,7 @@
 import { createRoot } from "react-dom/client";
 
+import { plugin } from "./plugin";
+
 function App() {
   return (
     <form>
@@ -16,7 +18,7 @@ function App() {
         工作流 JSON
         <textarea aria-label="工作流 JSON" rows={8} />
       </label>
-      <p>通过公网 HTTPS 的 ComfyUI `/prompt` 接口提交工作流。</p>
+      <p>通过公网 HTTPS 的 {plugin.manifest.name} `/prompt` 接口提交工作流。</p>
     </form>
   );
 }

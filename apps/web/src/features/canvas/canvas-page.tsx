@@ -6,11 +6,11 @@ import { Background, Controls, ReactFlow } from "@xyflow/react";
 
 import { createPluginHost } from "@package/plugin-runtime";
 
-import brandSearchManifest from "../../../../../plugins/brand-search/manifest.json";
-import comfyuiWorkflowManifest from "../../../../../plugins/comfyui-workflow/manifest.json";
-import imageViewerManifest from "../../../../../plugins/image-viewer/manifest.json";
-import promptComposeManifest from "../../../../../plugins/prompt-compose/manifest.json";
-import textInputManifest from "../../../../../plugins/text-input/manifest.json";
+import { manifest as brandSearchManifest } from "../../../../../plugins/brand-search/src/plugin";
+import { manifest as comfyuiWorkflowManifest } from "../../../../../plugins/comfyui-workflow/src/plugin";
+import { manifest as imageViewerManifest } from "../../../../../plugins/image-viewer/src/plugin";
+import { manifest as promptComposeManifest } from "../../../../../plugins/prompt-compose/src/plugin";
+import { manifest as textInputManifest } from "../../../../../plugins/text-input/src/plugin";
 
 import { ProviderConfigPanel } from "../connections/provider-config-panel";
 import { useProviderSettings } from "../connections/use-provider-settings";
@@ -34,7 +34,7 @@ export function CanvasPage() {
   const { data: project, isLoading } = useProjectQuery();
   const projectName = project?.name ?? "项目画布";
   const installedPlugins = project?.installedPlugins ?? [];
-  const { manifests: importedManifests, addManifest } = useImportedPluginManifests();
+  const { manifests: importedManifests, addManifest, removeManifest } = useImportedPluginManifests();
   const {
     comfyui,
     ragflow,
@@ -133,7 +133,11 @@ export function CanvasPage() {
           ))}
         </section>
 
-        <ImportPluginPanel manifests={importedManifests} onImport={addManifest} />
+        <ImportPluginPanel
+          manifests={importedManifests}
+          onImport={addManifest}
+          onRemove={removeManifest}
+        />
 
         <ProviderConfigPanel
           comfyui={comfyui}

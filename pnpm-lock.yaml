@@ -45,6 +45,9 @@ importers:
       '@package/plugin-runtime':
         specifier: workspace:*
         version: link:../../packages/plugin-runtime
+      '@package/plugin-sdk':
+        specifier: workspace:*
+        version: link:../../packages/plugin-sdk
       '@xyflow/react':
         specifier: ^12.11.0
         version: 12.11.0(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -87,7 +90,20 @@ importers:
 
   packages/plugin-runtime: {}
 
-  packages/plugin-sdk: {}
+  packages/plugin-sdk:
+    dependencies:
+      '@package/asset-types':
+        specifier: workspace:*
+        version: link:../asset-types
+      '@package/protocol':
+        specifier: workspace:*
+        version: link:../protocol
+      '@package/ui-sdk':
+        specifier: workspace:*
+        version: link:../ui-sdk
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
 
   packages/protocol:
     dependencies:
@@ -114,7 +130,11 @@ importers:
         specifier: ^2.14.6
         version: 2.14.6(@types/node@24.13.1)(typescript@5.9.3)
 
-  tests/repo: {}
+  tests/repo:
+    dependencies:
+      '@package/plugin-sdk':
+        specifier: workspace:*
+        version: link:../../packages/plugin-sdk
 
 packages:
 

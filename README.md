@@ -7,11 +7,43 @@
 - 提交一个模拟的 ComfyUI 工作流
 - 在 Web 应用中渲染生成结果预览
 
+当前仓库还包含一套已经接入的插件开发 SDK，以及 5 个使用该 SDK 定义的官方插件示例。
+
+## 本阶段新增
+
+- 官方插件迁移到统一的 `@package/plugin-sdk`
+- 自定义插件支持导入后删除
+- 新增插件 SDK 模板和开发者指南
+
+## SDK 与文档
+
+- SDK 入口：[packages/plugin-sdk](/Users/apple/Documents/New%20project%203/packages/plugin-sdk/README.md:1)
+- 开发者指南：[docs/developers/plugin-sdk-guide.md](/Users/apple/Documents/New%20project%203/docs/developers/plugin-sdk-guide.md:1)
+- 起步模板：
+  - [packages/plugin-sdk/templates/basic-plugin/plugin.ts](/Users/apple/Documents/New%20project%203/packages/plugin-sdk/templates/basic-plugin/plugin.ts:1)
+  - [packages/plugin-sdk/templates/basic-plugin/index.tsx](/Users/apple/Documents/New%20project%203/packages/plugin-sdk/templates/basic-plugin/index.tsx:1)
+
 ## 工作区命令
 
 - `pnpm install`
 - `pnpm test`
 - `pnpm build`
+
+## 插件现状
+
+官方插件已经通过 SDK 定义：
+
+- 文本输入
+- 品牌检索
+- 提示词拼装
+- ComfyUI 工作流
+- 图片预览
+
+在宿主中：
+
+- 可以导入插件 Manifest JSON
+- 导入后的插件会出现在当前项目中
+- 现在也支持删除已导入的自定义插件
 
 ## E2E 核心闭环
 
