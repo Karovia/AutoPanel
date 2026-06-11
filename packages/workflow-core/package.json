@@ -1,0 +1,18 @@
+{
+  "name": "@package/workflow-core",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "imports": {
+    "#cache-key": "./src/cache-key.ts",
+    "#graph": "./src/graph.ts",
+    "#snapshot": "./src/snapshot.ts",
+    "#validate-run": "./src/validate-run.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run"
+  }
+}
