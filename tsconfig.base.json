@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@package/protocol": [
+        "packages/protocol/src/index.ts"
+      ],
+      "@package/protocol/*": [
+        "packages/protocol/src/*"
+      ],
+      "@package/asset-types": [
+        "packages/asset-types/src/index.ts"
+      ],
+      "@package/asset-types/*": [
+        "packages/asset-types/src/*"
+      ],
+      "@package/workflow-core": [
+        "packages/workflow-core/src/index.ts"
+      ],
+      "@package/workflow-core/*": [
+        "packages/workflow-core/src/*"
+      ],
+      "@package/plugin-sdk": [
+        "packages/plugin-sdk/src/index.ts"
+      ],
+      "@package/plugin-sdk/*": [
+        "packages/plugin-sdk/src/*"
+      ],
+      "@package/ui-sdk": [
+        "packages/ui-sdk/src/index.ts"
+      ],
+      "@package/ui-sdk/*": [
+        "packages/ui-sdk/src/*"
+      ],
+      "@package/plugin-runtime": [
+        "packages/plugin-runtime/src/index.ts"
+      ],
+      "@package/plugin-runtime/*": [
+        "packages/plugin-runtime/src/*"
+      ]
+    }
+  }
+}
