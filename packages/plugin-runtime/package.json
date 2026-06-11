@@ -1,0 +1,12 @@
+{
+  "name": "@package/plugin-runtime",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run src/host.test.ts"
+  }
+}
