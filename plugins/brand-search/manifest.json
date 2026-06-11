@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "id": "core.brand-search",
+  "name": "品牌检索",
+  "version": "0.1.0",
+  "engine": {
+    "host": "^1.0.0",
+    "sdk": "^1.0.0"
+  },
+  "entrypoints": {
+    "ui": "http://localhost:4102/index.html"
+  },
+  "contributes": {
+    "nodes": [
+      {
+        "type": "core.brand-search/node",
+        "title": "品牌检索",
+        "inputs": [
+          {
+            "id": "query",
+            "type": "core/text"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "results",
+            "type": "core/text"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": [
+    "jobs:create"
+  ]
+}
