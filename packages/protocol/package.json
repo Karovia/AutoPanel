@@ -1,0 +1,12 @@
+{
+  "name": "@package/protocol",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "test": "vitest run src/index.test.ts"
+  },
+  "dependencies": {
+    "@package/asset-types": "workspace:*",
+    "zod": "^4.4.3"
+  }
+}
