@@ -40,8 +40,19 @@ export function useImportedPluginManifests() {
     });
   }
 
+  function removeManifest(pluginId: string) {
+    setManifests((current) => {
+      const next = current.filter((item) => item.id !== pluginId);
+
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+
+      return next;
+    });
+  }
+
   return {
     addManifest,
     manifests,
+    removeManifest,
   };
 }

@@ -11,6 +11,7 @@
     "vitest": "vitest run"
   },
   "dependencies": {
+    "@package/plugin-sdk": "workspace:*",
     "@package/plugin-runtime": "workspace:*",
     "@xyflow/react": "^12.11.0",
     "next": "^16.2.9",

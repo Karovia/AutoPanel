@@ -6,6 +6,10 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      "@package/plugin-sdk": path.resolve(
+        __dirname,
+        "../../packages/plugin-sdk/src/index.ts",
+      ),
       "@package/plugin-runtime": path.resolve(
         __dirname,
         "../../packages/plugin-runtime/src/index.ts",

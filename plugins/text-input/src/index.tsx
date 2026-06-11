@@ -1,10 +1,12 @@
 import { createRoot } from "react-dom/client";
 
+import { plugin } from "./plugin";
+
 function App() {
   return (
     <label>
-      文本输入
-      <textarea aria-label="文本输入" rows={8} />
+      {plugin.nodes[0].title}
+      <textarea aria-label={plugin.manifest.name} rows={8} />
     </label>
   );
 }

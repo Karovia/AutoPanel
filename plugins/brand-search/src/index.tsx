@@ -1,5 +1,7 @@
 import { createRoot } from "react-dom/client";
 
+import { plugin } from "./plugin";
+
 function App() {
   return (
     <form>
@@ -20,7 +22,7 @@ function App() {
         品牌检索词
         <input name="query" type="search" />
       </label>
-      <p>通过公网 HTTPS 的 RAGFlow 检索 API 拉取品牌上下文。</p>
+      <p>{plugin.manifest.name}通过公网 HTTPS 的 RAGFlow 检索 API 拉取品牌上下文。</p>
     </form>
   );
 }

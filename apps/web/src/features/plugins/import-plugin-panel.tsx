@@ -9,9 +9,10 @@ import type { PluginManifest } from "@package/protocol";
 type ImportPluginPanelProps = {
   manifests: PluginManifest[];
   onImport: (manifest: PluginManifest) => void;
+  onRemove: (pluginId: string) => void;
 };
 
-export function ImportPluginPanel({ manifests, onImport }: ImportPluginPanelProps) {
+export function ImportPluginPanel({ manifests, onImport, onRemove }: ImportPluginPanelProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [statusMessage, setStatusMessage] = useState<string>("尚未导入自定义插件。");
 
@@ -33,6 +34,11 @@ export function ImportPluginPanel({ manifests, onImport }: ImportPluginPanelProp
     } finally {
       event.target.value = "";
     }
+  }
+
+  function handleRemove(manifest: PluginManifest) {
+    onRemove(manifest.id);
+    setStatusMessage(`已删除插件：${manifest.name}`);
   }
 
   return (
@@ -87,9 +93,35 @@ export function ImportPluginPanel({ manifests, onImport }: ImportPluginPanelProp
               }}
             >
               <strong style={{ display: "block", marginBottom: 4 }}>{manifest.name}</strong>
-              <span style={{ color: "#94a3b8", fontSize: 13 }}>
-                {manifest.id} · {manifest.version}
-              </span>
+              <div
+                style={{
+                  alignItems: "center",
+                  display: "flex",
+                  gap: 12,
+                  justifyContent: "space-between",
+                }}
+              >
+                <span style={{ color: "#94a3b8", fontSize: 13 }}>
+                  {manifest.id} · {manifest.version}
+                </span>
+                <button
+                  aria-label={`删除${manifest.name}`}
+                  onClick={() => handleRemove(manifest)}
+                  style={{
+                    background: "transparent",
+                    border: "1px solid rgba(248, 113, 113, 0.4)",
+                    borderRadius: 999,
+                    color: "#fca5a5",
+                    cursor: "pointer",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    padding: "6px 10px",
+                  }}
+                  type="button"
+                >
+                  删除
+                </button>
+              </div>
             </div>
           ))}
         </div>
